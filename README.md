@@ -9,7 +9,7 @@ git clone https://github.com/abicorios/bitrix_vagrant
 ```
 Удалите папку `.git`:
 ```
-./rm_dor_git.sh
+./rm_dot_git.sh
 ```
 Перейдите в папку `c7`:
 ```
