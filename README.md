@@ -11,7 +11,7 @@ git clone https://github.com/abicorios/bitrix_vagrant
 ```
 ./rm_dor_git.sh
 ```
-Перейдите в папку c7:
+Перейдите в папку `c7`:
 ```
 cd c7
 ```
