@@ -78,7 +78,11 @@ Vagrant.configure("2") do |config|
     chmod +x bitrix-env.sh
     ./bitrix-env.sh
     sed -i 's!~/menu.sh!#\\0!' /root/.bash_profile
-    mv /vagrant/do_not_run.sh /root/run_after_site_install.sh
+	echo '#!/bin/bash
+cd /home/bitrix
+rsync -a --info=progress2 www/ www.sync/
+mv www{,.bac}
+sudo -u bitrix ln -s www.sync www' > /root/run_after_site_install.sh
     chmod +x /root/run_after_site_install.sh
   SHELL
 end
