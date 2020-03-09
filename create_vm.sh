@@ -1,4 +1,4 @@
 #!/bin/bash
 cd c7
-vagrant plugin install --local
-vagrant up
+time vagrant plugin install --local
+time vagrant up
