@@ -78,11 +78,13 @@ Vagrant.configure("2") do |config|
     chmod +x bitrix-env.sh
     ./bitrix-env.sh
     sed -i 's!~/menu.sh!#\\0!' /root/.bash_profile
-	echo '#!/bin/bash
+	echo "#!/bin/bash
+if (( \\`du -s /home/bitrix/www | cut -d$'\\t' -f1\\` > 10000 )) && [ -d /home/bitrix/www ] && [ ! -L /home/bitrix/www ] && [ -d /home/bitrix/www.sync ] && [ ! -d /home/bitrix/www.bac ]; then
 cd /home/bitrix
 rsync -a --info=progress2 www/ www.sync/
 mv www{,.bac}
-sudo -u bitrix ln -s www.sync www' > /root/run_after_site_install.sh
+sudo -u bitrix ln -s www.sync www
+fi" > /root/run_after_site_install.sh
     chmod +x /root/run_after_site_install.sh
   SHELL
 end
