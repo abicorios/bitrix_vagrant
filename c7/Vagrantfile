@@ -86,7 +86,9 @@ rsync -a --info=progress2 www/ www.sync/
 mv www{,.bac}
 sudo -u bitrix ln -s www.sync www
 fi" > /root/.bin/run_after_site_install.sh
-    echo '@reboot /root/.bin/run_after_site_install.sh' | crontab
     chmod +x /root/.bin/run_after_site_install.sh
   SHELL
+  config.trigger.after :up, :reload do |tr|
+    tr.run_remote = {inline: "/root/.bin/run_after_site_install.sh"}
+  end
 end
