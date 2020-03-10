@@ -1,3 +1,3 @@
 cd c7
-echo y | vagrant up
+vagrant plugin install --local
 vagrant up
