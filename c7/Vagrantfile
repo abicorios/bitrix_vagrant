@@ -84,6 +84,7 @@ zend_extension="/usr/lib64/php/modules/xdebug.so"
 xdebug.remote_enable=1
 xdebug.remote_host=10.0.2.2
 xdebug.remote_port=9000' >> /etc/php.ini
+    service httpd reload
     mkdir /root/.bin
     echo "#!/bin/bash
 if (( \\`du -s /home/bitrix/www | cut -d$'\\t' -f1\\` > 10000 )) && [ -d /home/bitrix/www ] && [ ! -L /home/bitrix/www ] && [ -d /home/bitrix/www.sync ] && [ ! -d /home/bitrix/www.bac ]; then
