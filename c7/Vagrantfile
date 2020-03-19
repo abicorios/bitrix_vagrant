@@ -103,6 +103,6 @@ fi" > /root/.bin/run_after_site_install.sh
     chmod +x /root/.bin/run_after_site_install.sh
   SHELL
   config.trigger.after :up, :reload do |tr|
-    tr.run_remote = {inline: "if [ -f /root/.bin/run_after_site_install.sh ]; then /root/.bin/run_after_site_install.sh; fi"}
+    tr.run_remote = {inline: "if [ -f /root/.bin/run_after_site_install.sh ]; then /root/.bin/run_after_site_install.sh; fi && hostname -I | cut -d' ' -f2"}
   end
 end
