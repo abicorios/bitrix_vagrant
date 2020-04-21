@@ -16,10 +16,11 @@ sudo dpkg -i vagrant_2.2.7_x86_64.deb
 Обратите внимание что в системных репозиториях более старые версии Vagrant, лучше не устанавливать через apt.
 Клонируйте репозиторий:
 ```
-git clone https://github.com/abicorios/bitrix_vagrant
+git clone https://github.com/abicorios/bitrix_vagrant projectname
 ```
 Удалите папку `.git`:
 ```
+cd projectname
 ./rm_dot_git.sh
 ```
 Для создания виртуальной машины запустите скрипт:
