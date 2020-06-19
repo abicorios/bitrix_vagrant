@@ -79,7 +79,7 @@ Vagrant.configure("2") do |config|
   config.vm.provision :reload
   config.vm.provision "shell", inline: <<-SHELL
     chown 600:600 /home/bitrix
-    yum install wget -y
+    yum install wget epel-release -y
     wget http://repos.1c-bitrix.ru/yum/bitrix-env.sh
     chmod +x bitrix-env.sh
     ./bitrix-env.sh
