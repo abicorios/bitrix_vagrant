@@ -5,7 +5,7 @@
 # Использование
 Установите новый [Virtualbox](https://www.virtualbox.org/wiki/Downloads) согласно инструкции на странице загрузки. 
 
-Установите новый [Vagrant](https://www.vagrantup.com/downloads.html) из скачанной x64 версии deb файла:
+Установите [Vagrant](https://www.vagrantup.com/downloads.html) версии `2.2.10` (в более новых происходит [ошибка](https://github.com/dotless-de/vagrant-vbguest/issues/391) `vbguest` плагина) из скачанной x64 версии deb файла.
 
 Обратите внимание что в системных репозиториях более старые версии Vagrant, лучше не устанавливать через apt.
 Клонируйте репозиторий:
