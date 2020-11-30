@@ -90,6 +90,7 @@ Vagrant.configure("2") do |config|
     chmod +x bitrix-env.sh
     ./bitrix-env.sh
     sed -i 's!~/menu.sh!#\\0!' /root/.bash_profile
+    rsync -a /home/bitrix/www{/,.bac0/}
     echo '
 [xdebug]
 zend_extension="/usr/lib64/php/modules/xdebug.so"
