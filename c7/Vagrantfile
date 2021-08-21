@@ -90,6 +90,8 @@ Vagrant.configure("2") do |config|
     chmod +x bitrix-env.sh
     ./bitrix-env.sh
     sed -i 's!~/menu.sh!#\\0!' /root/.bash_profile
+    touch /home/bitrix/www/.htsecure
+    chown 600:600 /home/bitrix/www/.htsecure
     rsync -a /home/bitrix/www{/,.bac0/}
     echo '
 [xdebug]
